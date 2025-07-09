@@ -6,26 +6,24 @@ const nextConfig: NextConfig = {
   turbopack: {
     rules: {
       '*.ts': {
-        loaders: ['babel-loader'],
         as: '*.js',
-        options: {
-          // loaders: [
-          //   {
-          //     loader: 'babel-loader',
-          //     options: {
-          presets: ['next/babel'],
-          plugins: [
-            "@babel/plugin-proposal-decorators",
-            {
-              "version": "2023-05"
+        loaders: [
+          {
+            loader: 'babel-loader',
+            options: {
+              presets: ['next/babel'],
+              plugins: [
+                ['@babel/plugin-proposal-decorators', {
+                  version: "2023-11",
+                  decoratorsBeforeExport: true
+                }],
+                '@babel/plugin-transform-runtime',
+                '@babel/plugin-proposal-class-properties'
+              ]
             }
-          ]
-          //   ]
-          // }
-          // }
-          // ]
-        }
-      }
+          }
+        ]
+      },
     }
   }
 }
