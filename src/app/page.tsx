@@ -1,6 +1,6 @@
 import Image from "next/image"
 import styles from "./page.module.css"
-import { store } from './store'
+import Counter from './Counter'
 
 export default function Home() {
   return (
@@ -18,8 +18,7 @@ export default function Home() {
           <li>
             Get started by editing <code>src/app/page.tsx</code>.
           </li>
-          <li>Count: {store.count}</li>
-          <button onClick={store.increment}>Increment</button>
+          <Counter />
         </ol>
 
         <div className={styles.ctas}>

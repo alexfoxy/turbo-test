@@ -11,14 +11,14 @@ const nextConfig: NextConfig = {
           {
             loader: 'babel-loader',
             options: {
-              presets: ['next/babel'],
+              // presets: ['next/babel'],
               plugins: [
                 ['@babel/plugin-proposal-decorators', {
                   version: "2023-11",
                   decoratorsBeforeExport: true
                 }],
                 '@babel/plugin-transform-runtime',
-                '@babel/plugin-proposal-class-properties'
+                // '@babel/plugin-proposal-class-properties'
               ]
             }
           }
